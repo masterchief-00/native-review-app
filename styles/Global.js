@@ -38,9 +38,24 @@ export const globalStyles = StyleSheet.create({
     borderColor: "#ddd",
     borderRadius: 8,
     padding: 10,
+    marginTop: 10,
     marginHorizontal: 20,
     marginVertical: 5,
   },
+  modalToggle: {
+    marginBottom: 10,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: "#f2f2f2",
+    padding: 10,
+    alignSelf: "center",
+  },
+  modalClose: {
+    
+  },
+  modalContent:{
+    flex: 1,
+  }
 });
 
 export const images = {

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Text, View, FlatList, TouchableOpacity } from "react-native";
+import { Text, View, FlatList, TouchableOpacity, Modal } from "react-native";
 import { globalStyles } from "../styles/Global";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
+  const [modalOpen, setModalOpen] = useState(false);
   const [reviews, setReviews] = useState([
     {
       title: "Zelda, Breath of fresh air",
@@ -25,6 +27,30 @@ export default function Home({ navigation }) {
   ]);
   return (
     <View style={globalStyles.container}>
+      <Modal visible={modalOpen} animationType='slide'>
+        <View style={globalStyles.modalContent}>
+          <MaterialIcons
+            name="close"
+            size={24}
+            style={{...globalStyles.modalToggle,...globalStyles.modalClose}}
+            onPress={() => {
+              setModalOpen(false);
+            }}
+          />
+
+          <Text>Hello!</Text>
+        </View>
+      </Modal>
+
+      <MaterialIcons
+        name="add"
+        size={24}
+        style={globalStyles.modalToggle}
+        onPress={() => {
+          setModalOpen(true);
+        }}
+      />
+
       <FlatList
         data={reviews}
         renderItem={({ item }) => (

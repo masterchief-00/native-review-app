@@ -1,4 +1,5 @@
 import { createDrawerNavigator } from "@react-navigation/drawer";
+import Header from "../shared/Header";
 import AboutStack from "./AboutStack";
 import HomeStack from "./HomeStack";
 
@@ -23,8 +24,17 @@ export default function Drawer() {
         },
       }}
     >
-      <rootDrawerNavigator.Screen name="GameZone" component={HomeStack} />
-      <rootDrawerNavigator.Screen name="About GameZone" component={AboutStack} />
+      <rootDrawerNavigator.Screen
+        name="GameZone"
+        component={HomeStack}
+        options={{ headerTitle: ({ navigation }) => <Header navigation={navigation} title='GameZone' /> }}
+      />
+      <rootDrawerNavigator.Screen
+        name="About GameZone"
+        component={AboutStack}
+        options={{ headerTitle: ({ navigation }) => <Header navigation={navigation} title='About GameZone' /> }}
+
+      />
     </rootDrawerNavigator.Navigator>
   );
 }
