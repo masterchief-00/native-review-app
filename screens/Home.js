@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, FlatList,TouchableOpacity } from "react-native";
+import { Text, View, FlatList, TouchableOpacity } from "react-native";
 import { globalStyles } from "../styles/Global";
 
 export default function Home({ navigation }) {
@@ -23,14 +23,20 @@ export default function Home({ navigation }) {
       key: 3,
     },
   ]);
-  return <View style={globalStyles.container}>
-      <FlatList 
-          data={reviews}
-          renderItem={({item})=>(
-            <TouchableOpacity onPress={()=> navigation.navigate('Review details',item)}>
-                <Text style={globalStyles.titleText}>{item.title}</Text>
-            </TouchableOpacity>
-          )}
+  return (
+    <View style={globalStyles.container}>
+      <FlatList
+        data={reviews}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Review details", item)}
+          >
+            <View style={globalStyles.reviewContainer}>
+              <Text style={globalStyles.titleText}>{item.title}</Text>
+            </View>
+          </TouchableOpacity>
+        )}
       />
-  </View>;
+    </View>
+  );
 }

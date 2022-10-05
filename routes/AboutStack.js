@@ -1,10 +1,9 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import Home from "../screens/Home";
-import ReviewDetails from "../screens/ReviewDetails";
+import About from "../screens/About";
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function AboutStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -18,11 +17,10 @@ export default function HomeStack() {
           shadowOpacity: 1,
           shadowOffset: { width: 6, height: 10 },
           elevation: 8,
-        },        
+        },
       }}
     >
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Review details" component={ReviewDetails} />
+      <Stack.Screen name="About" component={About} />
     </Stack.Navigator>
   );
 }

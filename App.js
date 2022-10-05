@@ -1,11 +1,13 @@
 import * as Font from "expo-font";
 import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
 import React, { useState, useEffect, useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 import { View } from "react-native";
-import { globalStyles } from './styles/Global';
+import { globalStyles } from "./styles/Global";
 import HomeStack from "./routes/HomeStack";
-
+import Drawer from "./routes/Drawer";
 
 SplashScreen.preventAutoHideAsync();
 export default function App() {
@@ -41,7 +43,7 @@ export default function App() {
   return (
     <View style={globalStyles.container} onLayout={onLayoutRootView}>
       <NavigationContainer>
-        <HomeStack />
+        <Drawer />
       </NavigationContainer>
     </View>
   );
