@@ -50,12 +50,26 @@ export const globalStyles = StyleSheet.create({
     padding: 10,
     alignSelf: "center",
   },
-  modalClose: {
-    
-  },
-  modalContent:{
+  modalClose: {},
+  modalContent: {
     flex: 1,
-  }
+    padding: 20,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    padding: 10,
+    fontSize: 18,
+    borderRadius: 6,
+    marginBottom: 10,
+  },
+  errorText: {
+    color: "crimson",
+    textAlign:'center',
+    fontWeight:'bold',
+    marginBottom:10,
+    marginTop:6
+  },
 });
 
 export const images = {
